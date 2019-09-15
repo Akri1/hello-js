@@ -4,3 +4,4 @@ test project for js
 ## ToDo
 * List item 1
 * List item 2
+* New item 3
