@@ -11,7 +11,7 @@ function crearS( id ) {
     divkey.className = '';
 }
 //
-function myKeysDown ( e ) {
+function myKeysDw( e ) {
     switch ( e.keyCode ) {
         case 65: playS('snd01');break;
         case 83: playS('snd02');break;

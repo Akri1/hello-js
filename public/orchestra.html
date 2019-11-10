@@ -7,22 +7,23 @@
     <title>Document</title>
     <link rel="stylesheet" href="orchestra.css">
 </head>
-<body onekeydown="myKeysDown( event )"
-        onkeyup="myKeysUp( event )">
+<body onkeydown="myKeysDw( event )" onkeyup="myKeysUp( event )">
 
     <h1>Orchestra</h1>
 
     <div id="keys">
-        <div id="k01">A</div>
-        <div id="k02">S</div>
+        <div data-key="65">A</div>
+        <div data-key="83">S</div>
+        <div data-key="68">D</div>
     </div>
 
-
-
-    <audio id="snd01" src="sounds/boom.wav"></audio>
-    <audio id="snd02" src="sounds/clap.wav"></audio>
-    <audio id="snd03" src="sounds/openhat.wav"></audio>
+    <audio data-key="65" src="sounds/boom.wav"></audio>
+    <audio data-key="83" src="sounds/clap.wav"></audio>
+    <audio data-key="68" src="sounds/openhat.wav"></audio>
 
     <script src="orchestra.js "></script>
+
 </body>
 </html>
+
+
