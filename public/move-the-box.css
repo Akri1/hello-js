@@ -1,3 +1,33 @@
 div#buttons {
     text-align: center;
 }
+
+.box-1 {
+    background-image: url();
+}
+
+.box-3 {
+    background-image: url();
+}
+
+.box-3 {
+    background-image: url();
+}
+
+.box-4 {
+    background-image: url();
+}
+
+.box-5 {
+    background-image: url();
+}
+
+.movebox {
+    position: absolute;
+    z-index: 10;
+    left: 490px;
+    top: 678px;
+    transition: left 500ms linear;
+}
+
+
