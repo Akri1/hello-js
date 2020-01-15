@@ -4,12 +4,12 @@ var bCol = 7;
 var board = [
 
     [ 0, 0, 0, 0, 0, 0, 0, ],
+    [ 0, 0, 4, 5, 0, 0, 0, ],
     [ 0, 0, 0, 0, 0, 0, 0, ],
     [ 0, 0, 0, 0, 0, 0, 0, ],
     [ 0, 0, 0, 0, 0, 0, 0, ],
-    [ 0, 0, 0, 0, 0, 0, 0, ],
-    [ 0, 0, 0, 0, 0, 0, 0, ],
-    [ 0, 0, 0, 0, 0, 0, 0, ],
+    [ 0, 2, 0, 0, 0, 0, 0, ],
+    [ 0, 2, 3, 0, 0, 0, 0, ],
     [ 0, 1, 1, 0, 1, 0, 0, ],
 ];
 
@@ -36,7 +36,7 @@ function gravitation () {
 
 function drawBoard () {
     gravitation();
-    for (let r = 0; r , bRow; r++)
+    for (let r = 0; r < bRow; r++) {
         for (let c = 0; c < bCol; c++) {
             let i = bCol * r + c ;
             if (board[r][c] == 0) {
@@ -46,23 +46,23 @@ function drawBoard () {
             }
         }
     }
+}
+
+var selBox = [];
 
 function boardClick(e) {
-//    console.lod(e.target.callIndex );
-//    console.log(e.target.parentNode.rowIndex );
-    
-let r = e.target.parentNode.rowIndex
-let c = e.target.callIndex
-selBox ();
-if (board[r][c] > 0) {
-        selBox = [ r, c ];
-}
+    let r = e.target.parentNode.rowIndex
+    let c = e.target.cellIndex
+    selBox = [];
+    if (board[r][c] > 0) {
+            selBox = [ r, c ];
+    }
 }
 
 
 
 function moveUp() {
-    if ( selBox.length>0 && selBox[0]>bRow+1) {
+    if ( selBox.length>0 && selBox[0]>0) {
         let r = selBox[0];
         let c = selBox[1];
         if ( board[r-1][c] == 0 ) {
@@ -79,7 +79,7 @@ function moveUp() {
 }
 
 function moveDown() {
-    if ( selBox.length>0 && selBox[0]>bRow-1) {
+    if ( selBox.length>0 && selBox[0]<bRow-1) {
         let r = selBox[0];
         let c = selBox[1];
         if ( board[r+1][c] == 0 ) {
@@ -112,7 +112,7 @@ function moveLeft() {
     }
 }
 function moveRight() {
-    if ( selBox.length>0 && selBox[1]>bCol-1) {
+    if ( selBox.length>0 && selBox[1]<bCol-1) {
         let r = selBox[0];
         let c = selBox[1];
         if ( board[r][c+1] == 0 ) {

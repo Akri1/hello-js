@@ -1,25 +1,43 @@
+table#move-the-box {
+    border: 1px solid black;
+    border-collapse: collapse;
+    background-image: url('../Images/movetheboxfone.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;                           
+    background-position: center center;
+}
+
+table#move-the-box td {
+    border: 1px solid white;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 80px;
+    width: 80px;
+    text-align: center;
+}
 div#buttons {
     text-align: center;
 }
 
 .box-1 {
-    background-image: url();
+    background-image: url('../Images/box1.jpeg');
+}
+
+.box-2 {
+    background-image: url('../Images/box2.jpeg');
 }
 
 .box-3 {
-    background-image: url();
-}
-
-.box-3 {
-    background-image: url();
+    background-image: url('../Images/box3.jpeg') ;
 }
 
 .box-4 {
-    background-image: url();
+    background-color: plum;
 }
 
 .box-5 {
-    background-image: url();
+    background-color: silver;
 }
 
 .movebox {
@@ -29,5 +47,4 @@ div#buttons {
     top: 678px;
     transition: left 500ms linear;
 }
-
 

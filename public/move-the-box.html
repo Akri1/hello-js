@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Move-the-box</title>
+    <link rel="stylesheet" href="move-the-box.css">
+    <link rel="stylesheet" href="game-base.css">
 </head>
 <body>
         
-<table  onclick="boardClick(event)">
+<table id="move-the-box"  onclick="boardClick(event)">
     <tr>
         <td></td>
         <td></td>
@@ -87,10 +89,13 @@
 
 
         <div id="buttons">
-            <button onclick="moveLeft">L</button> <br>
-            <button onclick="moveUp">u</button>
-            <button onclick="moveDown">D</button> <br>
-            <button onclick="moveRight">R</button>
+            <button onclick="moveUp()">U</button> <br>
+            <button onclick="moveLeft()">L</button>
+            <button onclick="moveRight()">R</button> <br>
+            <button onclick="moveDown()">D</button>
         </div>
-</body>
+
+        <script src="move-the-box.js"></script>
+
+    </body>
 </html>
