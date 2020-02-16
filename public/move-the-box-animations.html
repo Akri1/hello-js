@@ -8,11 +8,23 @@
 <link rel="stylesheet" href="move-the-box.css">
 
 <style>
+    .movebox {
+        position: absolute;
+        z-index: 10;
+        left: 490px;
+        top: 678px;
+        border: 1pxm solid white;
+        width: 80px;
+        height: 80px;
+        text-align: center;
+        
+    }
  </style> 
+
 </head>
 <body>
  
-    <table  onclick="boardClick(event)">
+    <table id="move-the-box" onclick="boardClick(event)">
         <tr>
             <td></td>
             <td></td>
@@ -63,8 +75,8 @@
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
-            <td></td>
+            <td id="td1"></td>
+            <td id="td2"></td>
             <td></td>
         </tr>
         <tr>
@@ -87,7 +99,32 @@
         </tr>
     </table>
     
-            <div id="b1" class="box-1 movebox">
+   <button onclick="testMove()">Click</button>
+    
+   <script src="jquery-3.4.1.min.js"></script>        
+    
+    <script>
+    function testMove() {
+        moveBOX( '#td1', '#td2', '#box-1', )
+        moveBOX( '#td2', '#td1', '#box-2', )
+    }
+        function moveBOX ( s, a, d ){
+        let $S = $('#td1');
+        let $D = $('#td2');
+        let offS = $S.offset();
+        let offD = $D.offset();
+        let $BOX = $('<div>')
+            .addClass('box')
+            .addClass('box-1')
+            .css( offS )
+            .appendTo('body')
+        $BOX.animate( offD, 2000, function() {
+            $BOX.remove();
+        });    
+        }
+    
+    </script>
+    <!-- <div id="b1" class="box-1 movebox">
                 <button onclick="moveLeft">L</button> <br>
                 <button onclick="moveUp">u</button>
                 <button onclick="moveDown">D</button> <br>
@@ -97,11 +134,12 @@
             <script>
                 var el = document.getElementById ('b1')
                 function move() {
-                    el.style.left = 500; 
+                    el.style.left = '600px'; 
+                    el.style.top = '500px';
                 }
             
             </script>
-    
+     -->
     </body>
     </html>
 

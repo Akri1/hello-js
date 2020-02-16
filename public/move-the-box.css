@@ -19,6 +19,16 @@ table#move-the-box td {
 div#buttons {
     text-align: center;
 }
+.box {
+    border: 1px solid white;
+    position: absolute ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 80px;
+    width: 80px;
+    text-align: center;
+}
 
 .box-999 {
     background-color: black;
