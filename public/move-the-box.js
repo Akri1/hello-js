@@ -79,6 +79,8 @@ function boom () {
 
 var elBoard = document.querySelectorAll ('table#move-the-box td');
 
+var animationCounter = 0;
+
 function clearBoom () {
     for (let r=0; r<bRow; r++){
         for (let c=0; c<bCol; c++){
@@ -87,7 +89,9 @@ function clearBoom () {
             }
         }
     }
+    //drawBoard();
 }
+
 
 function gravitation () {
     for (let c=0; c<bCol; c++) {
@@ -109,8 +113,10 @@ function gravitation () {
 }
 
 function drawBoard () {
-    clearBoom();
     gravitation();
+    while ( animationCounter>0 ){
+
+    };
     let Boom = boom();
     for (let r = 0; r < bRow; r++) {
         for (let c = 0; c < bCol; c++) {
@@ -123,7 +129,7 @@ function drawBoard () {
         }
     }
     if ( Boom ) {
-        setTimeout ( function(){drawBoard(); }, 3000 );
+        setTimeout ( function(){drawBoard(); }, 2000 );
     }
 }
 
@@ -206,5 +212,38 @@ function moveRight() {
         drawBoard();
     }
 }
+
+
+function moveBOX ( s, d ) {
+        
+    let $S = $( 
+        $( '#move-the-box' )[0]
+            .rows[ s[0] ]
+                .cells[ s[1] ]
+    );
+
+    let $D = $(
+        $('#move-the-box')[0]
+            .rows[ d[0] ]
+                .cells[ d[1] ]
+    );
+
+let offS = $S.offset();
+let offD = $D.offset();
+let $B = $S[0].className;
+let $BOX = $('<div>')
+        .addClass('box')
+        .addClass('$B')
+        .css( offS )
+        .appendTo('body')
+    $S[0].className='';
+    $BOX.animationCounter();
+    $BOX.animate( offD, 1000, function() {
+        $BOX.remove();
+        $D[0].className=$B;
+});    
+}
+
+
 
 drawBoard();
