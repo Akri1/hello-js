@@ -12,21 +12,72 @@ table#move-the-box td {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    height: 80px;
-    width: 80px;
+    height: 81px;
+    width: 81px;
     text-align: center;
 }
 div#buttons {
-    text-align: center;
+    display: grid;
+    width:  81px;
+    height: 81px;
+    border: 1px solid black;
+    background-color: rgba(225, 225, 225, 0.7);
+    top: -300px;
+    left: -300px;
+    position: absolute;
 }
+
+div#buttons div span {
+    color: color;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+div#buttons div {
+    width: 27px;
+    height: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    
+}
+div#btnU {
+    grid-column-start: 2; 
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+div#btnD {
+    grid-column-start: 2; 
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 3;
+}
+
+div#btnR{
+    grid-column-start: 3; 
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+div#btnL {
+    grid-column-start: 1; 
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
 .box {
     border: 1px solid white;
     position: absolute ;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    height: 80px;
-    width: 80px;
+    height: 81px;
+    width: 81px;
     text-align: center;
 }
 
