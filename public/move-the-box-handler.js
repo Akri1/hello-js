@@ -29,23 +29,79 @@ function mouseOver( e ) {
     } 
     // $( 'div#buttons' ).css( offS);
 
-function moveUp () {
-    logs( 'UP' );
-}
+
+    
+    function moveUp() {
+        if ( selBox.length > 0 && selBox[0] > 0 ) {
+            let r = selBox[0];
+            let c = selBox[1];
+            if ( board[r-1][c] == 0 ) {
+                moveCelles( [r,c], [r-1,c] );
+                moveBOX( [r,c], [r-1,c] );
+            } else {
+            swapCelles ( [r,c], [r-1,c] );
+                moveBOX( [r,c], [r-1,c] );
+                moveBOX( [r-1,c], [r,c] );
+            } 
+        }
+    selBox = [];
+ }
+
+   
+
 
 function moveLeft() {
-    logs( 'LEFT' );
+    if ( selBox.length > 0 && selBox[1] > 0 ) {
+        let r = selBox[0];
+        let c = selBox[1];
+        if ( board[r][c-1] == 0 ) {
+            moveCelles( [r,c], [r,c-1] );
+            moveBOX( [r,c-1], [r,c]);
+        } else {
+           let t = board[r][c];
+           swapCelles ( [r,c], [r,c-1] );
+           moveBOX( [r,c], [r,c-1] );
+           moveBOX( [r,c-1], [r,c] );
+        } 
+    }
+    selBox = [];
 }
 
+
 function moveRight() {
-    logs( 'RIGHT' );
+    if ( selBox.length > 0 && selBox[1] < bCol-1) {
+        let r = selBox[0];
+        let c = selBox[1];
+        if ( board[r][c+1] == 0 ) {
+            moveCelles( [r,c], [r,c+1] );
+            moveBOX( [r,c+1], [r,c]);
+        } else {
+           let t = board[r][c];
+           swapCelles ( [r,c], [r,c+1] );
+           moveBOX( [r,c], [r,c+1] );
+           moveBOX( [r,c+1], [r,c] );
+        } 
+    }
+    selBox = [];
 }
 
 function moveDown() {
-    logs( 'DOWN' );
+    if ( selBox.length > 0 && selBox[0] < bRow-1)  {
+        let r = selBox[0];
+        let c = selBox[1];
+        if ( board[r+1][c] == 0 ) {
+            moveCelles( [r,c], [r+1,c] );
+            moveBOX( [r,c], [r+1,c]);
+        } else {
+           let t = board[r][c];
+           swapCelles ( [r,c], [r+1,c] );
+           moveBOX( [r,c], [r+1,c] );
+           moveBOX( [r+1,c], [r,c] );
+        } 
+    }
 }
-
 function logs(msg) {
     console.log( msg, selBox );
 
 }
+

@@ -98,12 +98,25 @@ div#btnL {
 }
 
 .box-4 {
-    background-color: plum;
+    background-image: url('../Images/box4.jpeg') ;
 }
 
 .box-5 {
-    background-color: silver;
+    background-image: url('../Images/box5.jpeg') ;
 }
+
+.box-6 {
+    background-image: url('../Images/box6.jpeg') ;
+}
+
+.box-7 {
+    background-image: url('../Images/box7.jpeg') ;
+}
+
+.box-8 {
+    background-image: url('../Images/box8.jpeg') ;
+}
+
 
 .movebox {
     position: absolute;

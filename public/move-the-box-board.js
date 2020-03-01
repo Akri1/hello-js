@@ -26,6 +26,18 @@ function drawBoard () {
     }
 }
 
+function swapCelles( s, d ) {
+    let t = board[ s[0] ][ s[1] ];
+    board [ s[0] ][ s[1] ] = board[ d[0] ][ d[1] ];
+    board [ d[0] ][ d[1] ]  = t;
+}
+
+function moveCelles ( s, d ) {
+    let t = board[ s[0] ][ s[1] ];
+    board[ s[0] ][ s[1] ] = board[ d[0] ][ d[1] ];
+    board[ d[0] ][ d[1] ] = t; 
+}
+
 
 
 
